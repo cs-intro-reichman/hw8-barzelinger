@@ -143,7 +143,7 @@ public class Network {
         // create the netwrok string.
         String strnetwork = "Network:";
         if (userCount > 0){
-             strnetwork = "\n";
+             strnetwork = strnetwork + "\n";
         }
         // go over all the users in the network.
         for (int i = 0; i < userCount; i++){
