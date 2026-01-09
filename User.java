@@ -57,8 +57,8 @@
         if (fCount == maxfCount){
             return false;
         }
-        // check if this user already follows thr given name.
-        else if (follows(name)){
+        // check if this user already follows the given name or if the user is trying to follow themself.
+        else if (follows(name) || getName().equals(name)){
             return false;
         }
         // add the name to the follows list and add 1 to fcount.
@@ -117,7 +117,7 @@
     public boolean isFriendOf(User other) {
         return follows(other.name) && other.follows(name);      
     }
-    
+
     /** Returns this user's name, and the names that s/he follows. */
     public String toString() {
         String ans = name + " -> ";

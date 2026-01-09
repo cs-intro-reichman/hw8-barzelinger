@@ -146,7 +146,13 @@ public class Network {
         for (int i = 0; i < userCount; i++){
             User currntUser = users[i];
             // add the user name to final string.
-            strnetwork = strnetwork + currntUser.toString() + "\n";
+            // if its the las name dont add row.
+            if (userCount - i == 1){
+                strnetwork = strnetwork + currntUser.toString();
+            }
+            else {
+                strnetwork = strnetwork + currntUser.toString() + "\n";
+            }
         }
 
        return strnetwork;
