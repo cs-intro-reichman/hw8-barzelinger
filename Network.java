@@ -114,8 +114,8 @@ public class Network {
                     count++;
                 }
             }
-            // if current canidate is more popular uodate.
-            if (count > bestcount){
+            // if current canidate is more popular update.
+            if (count >= bestcount){
                 bestcount = count;
                 mostpopular = canidate;
             }
@@ -141,14 +141,14 @@ public class Network {
     // Returns a textual description of all the users in this network, and who they follow.
     public String toString() {
         // create the netwrok string.
-        String strnetwork = "Network: \n\n";
+        String strnetwork = "Network: \n";
         // go over all the users in the network.
         for (int i = 0; i < userCount; i++){
             User currntUser = users[i];
             // add the user name to final string.
             // if its the las name dont add row.
             if (userCount - i == 1){
-                strnetwork = strnetwork + currntUser.toString() + " ";
+                strnetwork = strnetwork + currntUser.toString();
             }
             else {
                 strnetwork = strnetwork + currntUser.toString() + "\n";
