@@ -141,14 +141,14 @@ public class Network {
     // Returns a textual description of all the users in this network, and who they follow.
     public String toString() {
         // create the netwrok string.
-        String strnetwork = "Network: \n";
+        String strnetwork = "Network: \n\n";
         // go over all the users in the network.
         for (int i = 0; i < userCount; i++){
             User currntUser = users[i];
             // add the user name to final string.
             // if its the las name dont add row.
             if (userCount - i == 1){
-                strnetwork = strnetwork + currntUser.toString();
+                strnetwork = strnetwork + currntUser.toString() + " ";
             }
             else {
                 strnetwork = strnetwork + currntUser.toString() + "\n";
