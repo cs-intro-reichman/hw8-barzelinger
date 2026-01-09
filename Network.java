@@ -88,7 +88,7 @@ public class Network {
             if (!user.follows(canidate.getName()) && user != canidate){
                 // check if mutual cout is greater then privious count. if so update count and recommendation.
                 int mutual = user.countMutual(canidate);
-                if (count <= mutual){
+                if (count < mutual){
                     count = mutual;
                     recommend = canidate.getName();
                 }
@@ -115,7 +115,7 @@ public class Network {
                 }
             }
             // if current canidate is more popular update.
-            if (count >= bestcount){
+            if (count > bestcount){
                 bestcount = count;
                 mostpopular = canidate;
             }
@@ -141,7 +141,10 @@ public class Network {
     // Returns a textual description of all the users in this network, and who they follow.
     public String toString() {
         // create the netwrok string.
-        String strnetwork = "Network: \n";
+        String strnetwork = "Network:";
+        if (userCount > 0){
+             strnetwork = "\n";
+        }
         // go over all the users in the network.
         for (int i = 0; i < userCount; i++){
             User currntUser = users[i];
